@@ -1,0 +1,130 @@
+<!--<script>
+    var myapp = angular.module("myApp",[]);
+    myapp.controller("jsondata",function($scope){
+      $scope.names=
+        {  {"Name":"Alfreds Futterkiste","City":"Berlin","Country":"Germany"}, {"Name":"Ana Trujillo Emparedados y helados","City":"México D.F.","Country":"Mexico"}, {"Name":"Antonio Moreno Taquería","City":"México D.F.","Country":"Mexico"}, {"Name":"Around the Horn","City":"London","Country":"UK"}, {"Name":"B's Beverages","City":"London","Country":"UK"}, {"Name":"Berglunds snabbköp","City":"Luleå","Country":"Sweden"}, {"Name":"Blauer See Delikatessen","City":"Mannheim","Country":"Germany"}, {"Name":"Blondel père et fils","City":"Strasbourg","Country":"France"}, {"Name":"Bólido Comidas preparadas","City":"Madrid","Country":"Spain"}, {"Name":"Bon app'","City":"Marseille","Country":"France"}, {"Name":"Bottom-Dollar Marketse","City":"Tsawassen","Country":"Canada"}, {"Name":"Cactus Comidas para llevar","City":"Buenos Aires","Country":"Argentina"}, {"Name":"Centro comercial Moctezuma","City":"México D.F.","Country":"Mexico"}, {"Name":"Chop-suey Chinese","City":"Bern","Country":"Switzerland"}, {"Name":"Comércio Mineiro","City":"São Paulo","Country":"Brazil"}  }
+
+    });
+  </script>-->
+  <!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+</head>
+<body ng-app="myApp" ng-init="data=[
+{"Name":"John", "City":"Doe","Country":"India","Actions":"abc"},
+{"Name":"John", "City":"Doe","Country":"India","Actions":"abc"},
+{"Name":"John", "City":"Doe","Country":"India","Actions":"abc"}
+]">
+    
+
+  
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#">Stock Broker Services</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item active">
+          <a class="nav-link" href="/dashboard">Dashboard<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/profile">Profile</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/payment">Payment Info</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">Contact Us</a>
+        </li>
+        <li class="nav-item" >
+          <button name="logout" id="right" value="logout" (click)="logout()">logout</button>
+        </li>
+      </ul>
+    </div>
+  </nav>
+  <div id="wrapper">
+    <div id="content-wrapper">
+  
+      <div class="container-fluid">
+  
+        <!-- DataTables Example -->
+        <div class="container">
+          <div class="table-wrapper">
+            <div class="table-title">
+              <div class="row">
+                <div class="col-sm-8">
+                  <h2>Stock Holdings</h2>
+                </div>
+              </div>
+            </div>
+  
+            <!--Name <input type="text" ng-model = "search.Name">
+            <br><br>-->
+            <table class="table table-bordered">
+              <thead>
+              <tr>
+                <th>Name</th>
+                <th>City</th>
+                <th>Country</th>
+                <th>Actions</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr *ngFor ="let item of data;">
+              <!--<tr ng-repeat = "item in data | filter:search">-->
+                <td>{{item.Name}}</td>
+                <td>{{item.City}}</td>
+                <td>{{item.Country}}</td>
+                <td><a class="edit" title="Edit" data-toggle="tooltip"><i class="material-icons">&#xE254;</i></a>
+                  <a class="delete" title="Delete" data-toggle="tooltip"><i class="material-icons">&#xE872;</i></a>
+                </td>
+              </tr>
+  
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <!-- /.container-fluid -->
+  
+        <!-- Sticky Footer -->
+        <footer class="sticky-footer">
+          <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+              <span>Copyright © Your Website 2019</span>
+            </div>
+          </div>
+        </footer>
+  
+      </div>
+      <!-- /.content-wrapper -->
+  
+    </div>
+    <!-- /#wrapper -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0rc1/angular-route.min.js"></script>
+  
+    <!-- Bootstrap core JavaScript-->
+    <script src="vendor/jquery/jquery.min.js"></script>
+    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  
+    <!-- Core plugin JavaScript-->
+    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  
+    <!-- Page level plugin JavaScript-->
+    <script src="vendor/chart.js/Chart.min.js"></script>
+    <script src="vendor/datatables/jquery.dataTables.js"></script>
+    <script src="vendor/datatables/dataTables.bootstrap4.js"></script>
+  
+    <!-- Custom scripts for all pages-->
+    <script src="js/sb-admin.min.js"></script>
+  
+    <!-- Demo scripts for this page-->
+    <script src="js/demo/datatables-demo.js"></script>
+    <script src="js/demo/chart-area-demo.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    body            { font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif; background-image:url("../static/images/blueback.jpg");}
+a, h1, h2       { color: #377ba8; }
+h1, h2          { margin: 0; }
+h1              { border-bottom: 2px solid #eee; }
+h2              { font-size: 1.2em; }
+
+table.dataframe, .dataframe th, .dataframe td {
+  border: none;
+  border-bottom: 1px solid #C8C8C8;
+  border-collapse: collapse;
+  text-align:left;
+  padding: 10px;
+  margin-bottom: 40px;
+  font-size: 0.9em;
+}
+
+.male th {
+    background-color: #add8e6;
+    color: white;
+}
+
+.female th {
+    background-color: #77dd77;
+    color: white;
+}
+
+tr:nth-child(odd)		{ background-color:#eee; }
+tr:nth-child(even)	{ background-color:#fff; }
+
+tr:hover            { background-color: #ffff99;}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <title>Results</title>
+
+
+    <!-- Required meta tags always come first -->
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <title>Title</title>
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="node_modules/bootstrap-social/bootstrap-social.css">
+
+</head>
+<body>
+<div class="container-fluid">
+<center><h1>{{search_key}}</h1></center>
+<div class=page>
+    {%for k,v in output.items()%}
+        {% if v == "fake" %}
+            <div class='row row-content'>
+            <li style="color:red;background-color:#DAF7A6 ;">{{k}} <strong>{{ v }}</strong></li>
+            </div>
+        {% else %}
+            <div class='row row-content'>
+                <li style="color:green;">{{k}} <strong>{{ v }}</strong></li>
+            </div>
+        {% endif %}
+
+    {%endfor%}
+</div>
+<!-- jQuery first, then Popper.js, then Bootstrap JS. -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</div>
+</body>
+</html>
